@@ -18,6 +18,7 @@ Bom avisar no que tiver trabalhando, pra não ter que ficar lidando com conflito
 
 **pull de alterações:**
 ```
+git pull
 git add .
 git commit -m "<descrição do que foi alterado>"
 git push
