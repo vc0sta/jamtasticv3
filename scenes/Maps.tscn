@@ -4,7 +4,9 @@
 
 [node name="nav" type="Navigation2D" parent="." index="0"]
 
-[node name="TileMap" type="TileMap" parent="nav" index="0"]
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="map" type="TileMap" parent="nav" index="0"]
 
 mode = 0
 tile_set = null
@@ -15,7 +17,7 @@ cell_half_offset = 2
 cell_tile_origin = 0
 cell_y_sort = false
 cell_clip_uv = false
-collision_use_kinematic = false
+collision_use_kinematic = true
 collision_friction = 1.0
 collision_bounce = 0.0
 collision_layer = 1
@@ -23,15 +25,10 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
-[node name="collisions" type="Area2D" parent="." index="1"]
+[node name="world_pos" type="Position2D" parent="nav" index="1"]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
+position = Vector2( -16.3245, -23.1264 )
 
 

@@ -1,29 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://arte/map/tileset.png" type="Texture" id=1]
+
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 ) ]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 31.867, 32.1159 )
+extents = Vector2( 32, 32 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="Node2D" type="Node2D"]
 
 [node name="Sprite10" type="Sprite" parent="." index="0"]
 
-position = Vector2( -196.795, 296.615 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 64, 64, 64 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Sprite10" index="0"]
+
+navpoly = SubResource( 2 )
+enabled = true
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite3" type="Sprite" parent="." index="1"]
 
-position = Vector2( -331.172, 395.883 )
+position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 0, 64, 64 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite3" index="0"]
 
@@ -34,19 +50,24 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Sprite18" type="Sprite" parent="." index="2"]
 
-position = Vector2( -336.849, 230.267 )
+position = Vector2( 128, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 128, 64, 64 )
 region_filter_clip = true
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Sprite18" index="0"]
 
@@ -66,12 +87,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite26" type="Sprite" parent="." index="3"]
 
-position = Vector2( -53.7029, 402.141 )
+position = Vector2( 192, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 448, 64, 64 )
 region_filter_clip = true
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Sprite26" index="0"]
 
@@ -91,12 +112,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite27" type="Sprite" parent="." index="4"]
 
-position = Vector2( -229.332, 398.968 )
+position = Vector2( 256, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 448, 64, 64 )
 region_filter_clip = true
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Sprite27" index="0"]
 
@@ -114,39 +135,14 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite28" type="Sprite" parent="." index="5"]
+[node name="Sprite25" type="Sprite" parent="." index="5"]
 
-position = Vector2( -143.485, 401.509 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 138, 448, 64, 64 )
-region_filter_clip = true
-_sections_unfolded = [ "Region" ]
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Sprite28" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite28/StaticBody2D5" index="0"]
-
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite25" type="Sprite" parent="." index="6"]
-
-position = Vector2( -336.7, 305.159 )
+position = Vector2( 384, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 448, 64, 64 )
 region_filter_clip = true
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Sprite25" index="0"]
 
@@ -161,7 +157,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite25/StaticBody2D6" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
 

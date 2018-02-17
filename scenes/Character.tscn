@@ -19,19 +19,14 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-speed = 6
+speed = 4
 
 [node name="sprite" type="AnimatedSprite" parent="." index="0"]
 
 animation = "idle"
 offset = Vector2( 0, -20 )
 
-[node name="collision" type="CollisionShape2D" parent="." index="1"]
-
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="tween" type="Tween" parent="." index="2"]
+[node name="tween" type="Tween" parent="." index="1"]
 
 repeat = false
 playback_process_mode = 1
@@ -40,82 +35,32 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="RayCastDown" type="RayCast2D" parent="." index="3"]
+[node name="start_pos" type="Position2D" parent="." index="2"]
 
-position = Vector2( -13.2534, 0 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
+[node name="RigidBody2D" type="RigidBody2D" parent="." index="3"]
+
+input_pickable = false
+collision_layer = 1
 collision_mask = 1
-_sections_unfolded = [ "Transform" ]
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
 
-[node name="RayCastDown2" type="RayCast2D" parent="." index="4"]
+[node name="collision" type="CollisionShape2D" parent="RigidBody2D" index="0"]
 
-position = Vector2( 12.9379, 0 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="RayCastLeft" type="RayCast2D" parent="." index="5"]
-
-position = Vector2( 0, -13.2535 )
-rotation = 1.5708
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="RayCastLeft2" type="RayCast2D" parent="." index="6"]
-
-position = Vector2( 0, 13.569 )
-rotation = 1.5708
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="RayCastRight" type="RayCast2D" parent="." index="7"]
-
-position = Vector2( 0, 13.4112 )
-rotation = -1.5708
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="RayCastRight2" type="RayCast2D" parent="." index="8"]
-
-position = Vector2( 0, -13.2535 )
-rotation = -1.5708
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="RayCastUp" type="RayCast2D" parent="." index="9"]
-
-position = Vector2( -13.2534, -1.42001 )
-rotation = -3.14159
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 7
-_sections_unfolded = [ "Transform" ]
-
-[node name="RayCastUp2" type="RayCast2D" parent="." index="10"]
-
-position = Vector2( 12.9379, 0 )
-rotation = -3.14159
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 7
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="tween_completed" from="tween" to="." method="_on_tween_tween_completed"]
