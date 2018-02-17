@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/knight iso char_slice left_1.png-8a15f03ada5580ffcb33acbac91b3f1c.stex"
+
+[deps]
+
+source_file="res://arte/player/knight iso char_slice left_1.png"
+source_md5="ea0a381fc56be257829e5b0f1985c0d0"
+
+dest_files=[ "res://.import/knight iso char_slice left_1.png-8a15f03ada5580ffcb33acbac91b3f1c.stex" ]
+dest_md5="551ed8cad20cc1787f59fac6bd9f7808"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

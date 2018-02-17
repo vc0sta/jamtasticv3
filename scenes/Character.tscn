@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Character.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 14.7581
+height = 0.185303
+
+[node name="Character" type="Area2D"]
+
+position = Vector2( -0.35849, 0 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+speed = 6
+
+[node name="sprite" type="AnimatedSprite" parent="." index="0"]
+
+animation = "idle"
+offset = Vector2( 0, -20 )
+
+[node name="collision" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tween" type="Tween" parent="." index="2"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="RayCastDown" type="RayCast2D" parent="." index="3"]
+
+position = Vector2( -13.2534, 0 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastDown2" type="RayCast2D" parent="." index="4"]
+
+position = Vector2( 12.9379, 0 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastLeft" type="RayCast2D" parent="." index="5"]
+
+position = Vector2( 0, -13.2535 )
+rotation = 1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastLeft2" type="RayCast2D" parent="." index="6"]
+
+position = Vector2( 0, 13.569 )
+rotation = 1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastRight" type="RayCast2D" parent="." index="7"]
+
+position = Vector2( 0, 13.4112 )
+rotation = -1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastRight2" type="RayCast2D" parent="." index="8"]
+
+position = Vector2( 0, -13.2535 )
+rotation = -1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastUp" type="RayCast2D" parent="." index="9"]
+
+position = Vector2( -13.2534, -1.42001 )
+rotation = -3.14159
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 7
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastUp2" type="RayCast2D" parent="." index="10"]
+
+position = Vector2( 12.9379, 0 )
+rotation = -3.14159
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 7
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="tween_completed" from="tween" to="." method="_on_tween_tween_completed"]
+
+

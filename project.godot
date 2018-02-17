@@ -10,8 +10,20 @@ config_version=3
 
 [application]
 
-config/name="jamtasticv3"
+config/name="jamtasticv3 - Carnaval"
+run/main_scene="res://scenes/level_01.tscn"
 config/icon="res://icon.png"
+
+[input]
+
+left=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+ ]
+right=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+ ]
+up=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+ ]
+down=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+ ]
 
 [rendering]
 
