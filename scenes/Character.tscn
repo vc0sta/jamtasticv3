@@ -2,11 +2,11 @@
 
 [ext_resource path="res://scripts/Character.gd" type="Script" id=1]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 14.7581
-height = 0.185303
+radius = 15.0377
+height = 31.5166
 
 [node name="Character" type="Area2D"]
 
@@ -37,31 +37,10 @@ playback/speed = 1.0
 
 [node name="start_pos" type="Position2D" parent="." index="2"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-
-[node name="collision" type="CollisionShape2D" parent="RigidBody2D" index="0"]
-
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 0, -21.4044 )
+shape = SubResource( 1 )
 
 [connection signal="tween_completed" from="tween" to="." method="_on_tween_tween_completed"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/mob.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://arte/player/knight iso char_slice left_1.png" type="Texture" id=4]
 [ext_resource path="res://arte/player/knight iso char_slice up_2.png" type="Texture" id=5]
 [ext_resource path="res://arte/player/knight iso char_slice down_2.png" type="Texture" id=6]
+[ext_resource path="res://scenes/vision.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -31,9 +32,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="mob" index="0" instance=ExtResource( 1 )]
+[node name="mob" instance=ExtResource( 1 )]
 
+position = Vector2( 0, 0 )
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="sprite" parent="." index="0"]
 
@@ -41,4 +46,9 @@ frames = SubResource( 1 )
 animation = "right"
 _sections_unfolded = [ "Transform", "Visibility" ]
 
+[node name="vision" parent="." index="4" instance=ExtResource( 7 )]
 
+position = Vector2( -0.735046, -24.6491 )
+
+
+[editable path="vision"]
