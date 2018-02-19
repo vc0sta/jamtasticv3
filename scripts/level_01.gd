@@ -5,7 +5,6 @@ var mob = preload("res://scenes/mob.tscn")
 
 onready var start_pos = get_node("start_pos").position
 onready var end_pos
-onready var nav = get_node("nav")
 onready var map = get_node("nav/map")
 
 onready var mob_container = get_node("mob_container")
@@ -13,12 +12,15 @@ onready var mob_container = get_node("mob_container")
 onready var player = get_node("Player")
 
 func _ready():
-    var m = mob.instance()
-    mob_container.add_child(m)
-    m.position = start_pos
-    m.goal = player.position
-    m.nav = nav
-    connect('map_update', m, 'update_path')
+#    var m = mob.instance()
+#    mob_container.add_child(m)
+#    m.position = start_pos
+#    m.goal = player.position
+    for index in mob_container.get_child_count():
+        var m = mob_container.get_child(index)
+        if 'mob' in m.name:
+            connect('map_update', m, 'update_path')
+   
 
 func _input(event):
     end_pos = get_node("Player").position

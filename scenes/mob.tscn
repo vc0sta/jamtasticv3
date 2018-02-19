@@ -39,6 +39,10 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Transform" ]
+patrol_start_path = null
+patrol_end_path = null
+nav_path = null
+player_path = null
 
 [node name="sprite" parent="." index="0"]
 
@@ -59,8 +63,6 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
-
-[connection signal="tween_completed" from="vision_effect" to="." method="_on_vision_effect_tween_completed"]
 
 
 [editable path="vision"]
