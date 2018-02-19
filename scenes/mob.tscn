@@ -48,7 +48,19 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="vision" parent="." index="4" instance=ExtResource( 7 )]
 
-position = Vector2( -0.735046, -24.6491 )
+position = Vector2( 0, 0 )
+rotation = -6.28319
+
+[node name="vision_effect" type="Tween" parent="." index="5"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[connection signal="tween_completed" from="vision_effect" to="." method="_on_vision_effect_tween_completed"]
 
 
 [editable path="vision"]

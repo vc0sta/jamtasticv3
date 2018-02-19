@@ -12,7 +12,6 @@ func _process(delta):
     var motion = Vector2(speed_x, -speed_y).normalized() * SHOOT_SPEED
     position = position + motion * delta
     
-
     
     
     

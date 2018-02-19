@@ -52,6 +52,8 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 1024
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -73,8 +75,10 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="RayCast2D" index="0"]
 
+visible = false
 position = Vector2( 0, 195.542 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="area_entered" from="vision_range" to="." method="_on_vision_range_area_entered"]
 

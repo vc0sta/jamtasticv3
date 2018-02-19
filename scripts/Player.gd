@@ -18,7 +18,6 @@ func _process(delta):
     else:
         cursor.visible = true
     cursor.rotation_degrees = rad2deg(atan2(joy.x, joy.y))
-
     if Input.is_action_just_pressed('shoot'):
         if can_shoot:
             shoot(joy)

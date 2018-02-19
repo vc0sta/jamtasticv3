@@ -19,6 +19,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 speed = 4
 
 [node name="sprite" type="AnimatedSprite" parent="." index="0"]
