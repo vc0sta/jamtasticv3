@@ -6,6 +6,7 @@ var mob = preload("res://scenes/mob.tscn")
 onready var start_pos = get_node("start_pos").position
 onready var end_pos
 onready var map = get_node("nav/map")
+onready var nav = get_node("nav")
 
 onready var mob_container = get_node("mob_container")
 
@@ -16,16 +17,13 @@ func _ready():
 #    mob_container.add_child(m)
 #    m.position = start_pos
 #    m.goal = player.position
-    for index in mob_container.get_child_count():
-        var m = mob_container.get_child(index)
-        if 'mob' in m.name:
-            connect('map_update', m, 'update_path')
+    pass
    
 
 func _input(event):
     end_pos = get_node("Player").position
     if event is InputEventMouseButton and event.pressed:
-        print(event.position + (end_pos - get_viewport().size/2) , end_pos)
+        
         var tile = map.world_to_map(event.position + (end_pos - get_viewport().size/2))
         if event.button_index == 1:
             map.set_cell(tile.x, tile.y, 1)
@@ -33,5 +31,11 @@ func _input(event):
             map.set_cell(tile.x, tile.y, 0)
     if event is InputEventMouseButton and not event.pressed:
         emit_signal("map_update")
+        
+        for enemy in mob_container.get_child_count():
+            for index in mob_container.get_child(enemy).get_child_count():
+                var m = mob_container.get_child(enemy).get_child(index)
+                if 'mob' in m.name:
+                    m.nav = nav
 
 

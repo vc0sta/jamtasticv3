@@ -2,8 +2,8 @@ extends Area2D
 
 export(NodePath) var patrol_start_path
 export(NodePath) var patrol_end_path
-export(NodePath) var nav_path
 export(NodePath) var player_path
+export(NodePath) var nav_path
 
 onready var player = get_node(player_path)
 onready var vision = get_node('vision/vision_range')
@@ -13,7 +13,8 @@ onready var effect = get_node("vision_effect")
 
 onready var patrol_start = get_node(patrol_start_path)
 onready var patrol_end = get_node(patrol_end_path)
-onready var nav = get_node(nav_path)
+onready var nav = get_node(nav_path) setget set_nav
+
 
 var speed = 50
 var path = []
@@ -28,6 +29,7 @@ func _ready():
 
 func set_nav(new_nav):
     nav = new_nav
+    print(nav)
     update_path()
 #
 #func _draw():
@@ -60,7 +62,7 @@ func _physics_process(delta):
             path.remove(0)
     else:
         update_path()
-    
+       
     
     vision_raycast.rotation_degrees = rad2deg((player.position - position).angle())-vision_light.rotation_degrees - 90 
     
@@ -82,4 +84,3 @@ func _physics_process(delta):
         effect.start()
             
     update()
-

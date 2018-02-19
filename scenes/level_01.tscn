@@ -8,13 +8,12 @@
 [ext_resource path="res://arte/map/light.png" type="Texture" id=6]
 [ext_resource path="res://scenes/sound_source.tscn" type="PackedScene" id=7]
 
-[node name="level_01" index="0" instance=ExtResource( 1 )]
+[node name="level_01" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
 [node name="map" parent="nav" index="0"]
 
-position = Vector2( -90, 0 )
 tile_set = ExtResource( 3 )
 collision_layer = 1015809
 collision_mask = 1015809
@@ -26,7 +25,7 @@ position = Vector2( 580.332, 281.496 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 940, 570 )
+position = Vector2( 700, 580 )
 
 [node name="start_pos" type="Position2D" parent="." index="2"]
 
@@ -38,66 +37,63 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="enemy_01" type="Node" parent="mob_container" index="0"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Pause" ]
 
 [node name="mob" parent="mob_container/enemy_01" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 490, -320 )
+position = Vector2( 570, -320 )
 patrol_start_path = NodePath("../start_position_01")
 patrol_end_path = NodePath("../end_position_01")
-nav_path = NodePath("../../../nav")
 player_path = NodePath("../../../Player")
+nav_path = NodePath("../../../nav")
 
 [node name="start_position_01" type="Position2D" parent="mob_container/enemy_01" index="1"]
 
-position = Vector2( 480, -390 )
+position = Vector2( 570, -390 )
 
 [node name="end_position_01" type="Position2D" parent="mob_container/enemy_01" index="2"]
 
-position = Vector2( 490, 180 )
+position = Vector2( 580, 180 )
 
 [node name="enemy_02" type="Node" parent="mob_container" index="1"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Pause" ]
 
 [node name="mob" parent="mob_container/enemy_02" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 90, 190 )
+position = Vector2( 180, 190 )
 patrol_start_path = NodePath("../start_position_01")
 patrol_end_path = NodePath("../end_position_01")
-nav_path = NodePath("../../../nav")
 player_path = NodePath("../../../Player")
+nav_path = NodePath("../../../nav")
 
 [node name="start_position_01" type="Position2D" parent="mob_container/enemy_02" index="1"]
 
-position = Vector2( 80, 170 )
+position = Vector2( 190, 160 )
 
 [node name="end_position_01" type="Position2D" parent="mob_container/enemy_02" index="2"]
 
-position = Vector2( 650, 600 )
+position = Vector2( 700, 600 )
 
 [node name="enemy_03" type="Node" parent="mob_container" index="2"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Pause" ]
 
 [node name="mob" parent="mob_container/enemy_03" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 250, 1120 )
+position = Vector2( 310, 1190 )
 patrol_start_path = NodePath("../start_position_01")
 patrol_end_path = NodePath("../end_position_01")
-nav_path = NodePath("../../../nav")
 player_path = NodePath("../../../Player")
+nav_path = NodePath("../../../nav")
 
 [node name="start_position_01" type="Position2D" parent="mob_container/enemy_03" index="1"]
 
-position = Vector2( 210, 1240 )
+position = Vector2( 300, 1240 )
 
 [node name="end_position_01" type="Position2D" parent="mob_container/enemy_03" index="2"]
 
-position = Vector2( 860, 1000 )
+position = Vector2( 980, 910 )
 
 [node name="Light2D2" type="Light2D" parent="." index="4"]
 
@@ -206,7 +202,5 @@ _sections_unfolded = [ "Shadow", "Transform", "Visibility" ]
 [node name="sound_source" parent="." index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 1020, -410 )
-
-[connection signal="map_update" from="." to="mob_container/enemy_01/mob" method="_on_level_01_map_update"]
 
 
