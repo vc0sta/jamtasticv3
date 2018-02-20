@@ -9,10 +9,10 @@ func _ready():
 
 func _process(delta):
     if can_spot and not spotted:
-        if raycast.get_collider().name == 'Player':
-            spotted = true
-            print ('ALERTA!')
-            color = Color(1.0,0,0,1)
+        if raycast.is_colliding():
+            if raycast.get_collider().name == 'Player':
+                spotted = true
+                color = Color(1.0,0,0,1)
     
     
 func _on_vision_range_area_entered( area ):
@@ -21,7 +21,6 @@ func _on_vision_range_area_entered( area ):
 
 func _on_vision_range_area_exited( area ):
     if area.name == 'Player':
-        print ('exited_area')
         can_spot = false
         spotted = false
         color = Color(0.2,0.8,1,1)

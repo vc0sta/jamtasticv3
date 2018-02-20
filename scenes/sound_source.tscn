@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sounds/music_test.ogg" type="AudioStream" id=1]
 [ext_resource path="res://arte/sound_system.png" type="Texture" id=2]
+[ext_resource path="res://arte/buttons/X.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -22,7 +23,7 @@ audio_bus_name = "Master"
 
 shape = SubResource( 1 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="1"]
+[node name="audio" type="AudioStreamPlayer2D" parent="." index="1"]
 
 stream = ExtResource( 1 )
 volume_db = 0.0
@@ -35,7 +36,17 @@ area_mask = 1
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
 scale = Vector2( 0.5, 0.5 )
+z_as_relative = false
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="interact_button" type="Sprite" parent="." index="3"]
+
+visible = false
+position = Vector2( 0, -40 )
+scale = Vector2( 0.8, 0.8 )
+z_index = 1500
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 

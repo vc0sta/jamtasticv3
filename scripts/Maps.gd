@@ -3,7 +3,6 @@ extends Node
 signal map_update
 var mob = preload("res://scenes/mob.tscn")
 
-onready var start_pos = get_node("start_pos").position
 onready var end_pos
 onready var map = get_node("nav/map")
 onready var nav = get_node("nav")
@@ -11,6 +10,7 @@ onready var nav = get_node("nav")
 onready var mob_container = get_node("mob_container")
 
 onready var player = get_node("Player")
+
 
 func _ready():
 #    var m = mob.instance()
@@ -37,5 +37,4 @@ func _input(event):
                 var m = mob_container.get_child(enemy).get_child(index)
                 if 'mob' in m.name:
                     m.nav = nav
-
 

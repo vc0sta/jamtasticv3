@@ -21,8 +21,12 @@ var path = []
 var last_point
 var goal = Vector2()
 var alert = false
+var is_visible = false
+
+var last_print = ''
 
 func _ready():
+    self.modulate = Color(1, 1, 1, 0)
     goal = patrol_end.position
     pass
     
@@ -47,8 +51,24 @@ func update_path():
     path = nav.get_simple_path(position, goal, false)
     if path.size() == 0:
         queue_free()
-
-func _physics_process(delta):
+        
+func fade_visibilty(in_out):
+    var from = 0
+    var to = 1.5
+    if in_out == 1:
+        is_visible = true
+    else:
+        is_visible = false
+        from = 1.5
+        to = 0
+        
+    effect.interpolate_property(vision_light, 'energy', from, to, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+    effect.interpolate_property(self, "modulate", 
+            Color(1, 1, 1, from), Color(1, 1, 1, to-0.5), 0.2, 
+            Tween.TRANS_LINEAR, Tween.EASE_IN)
+            
+            
+func _process(delta):
     
     if position.distance_to(patrol_end.position) < 80:
         patrol_end.position = patrol_start.position
@@ -63,10 +83,21 @@ func _physics_process(delta):
     else:
         update_path()
        
-    
     vision_raycast.rotation_degrees = rad2deg((player.position - position).angle())-vision_light.rotation_degrees - 90 
     
-           
+    
+    if vision_raycast.is_colliding():
+        if vision_raycast.get_collider().name != last_print:
+            last_print = vision_raycast.get_collider().name
+            print(last_print)
+        if vision_raycast.get_collider().name == 'Player':
+            if is_visible == false:
+                fade_visibilty(1)    
+        elif is_visible == true:
+            fade_visibilty(0)
+    elif is_visible == true:
+        fade_visibilty(0)
+        
     if path.size() > 1:
         var side = path[1] - path[0]
         var final_angle = rad2deg(side.angle())-90
@@ -78,9 +109,7 @@ func _physics_process(delta):
             initial_angle -= 360
              
         effect.interpolate_property(vision_light, 'rotation_degrees',
-            initial_angle, final_angle, 0.3,
+            initial_angle, final_angle, 0.5,
             Tween.TRANS_LINEAR, Tween.EASE_OUT)
         
         effect.start()
-            
-    update()

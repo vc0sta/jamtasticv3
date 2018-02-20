@@ -5,6 +5,8 @@ onready var cursor = get_node("cursor")
 onready var timer = get_node("shoot_timer")
 onready var can_shoot = true
 
+signal can_interact
+signal cannot_interact
 
 func _process(delta):
     for dir in moves.keys():
@@ -36,3 +38,11 @@ func restart_timer():
     
 func _on_shoot_timer_timeout():
     can_shoot = true
+
+
+func _on_sound_source_area_entered( area ):
+    emit_signal("can_interact")
+
+
+func _on_sound_source_area_exited( area ):
+    emit_signal("cannot_interact")
