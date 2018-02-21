@@ -40,6 +40,7 @@ collision_mask = 2
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 patrol_start_path = null
+patrol_mid_path = null
 patrol_end_path = null
 player_path = null
 nav_path = null
@@ -54,7 +55,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 position = Vector2( 0, 0 )
 rotation = -6.28319
-energy = 0.01
 _sections_unfolded = [ "Material", "Range", "Shadow", "Transform" ]
 
 [node name="Sprite" parent="vision/RayCast2D" index="0"]
@@ -70,6 +70,24 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="path_timer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="alert_timer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="path_timer" to="." method="_on_path_timer_timeout"]
+
+[connection signal="timeout" from="alert_timer" to="." method="_on_alert_timer_timeout"]
 
 
 [editable path="vision"]
