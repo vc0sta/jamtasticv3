@@ -34,11 +34,20 @@ _sections_unfolded = [ "Pause" ]
 
 editor/display_folded = true
 position = Vector2( 980, -130 )
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
 patrol_start_path = NodePath("../start_position_01")
 patrol_mid_path = NodePath("../middle_position_01")
 patrol_end_path = NodePath("../end_position_01")
 player_path = NodePath("../../../Player")
 nav_path = NodePath("../../../nav")
+
+[node name="sprite" parent="mob_container/enemy_01/mob" index="0"]
+
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="vision" parent="mob_container/enemy_01/mob" index="4"]
+
+_sections_unfolded = [ "Material", "Range", "Shadow", "Transform", "Visibility" ]
 
 [node name="start_position_01" type="Position2D" parent="mob_container/enemy_01" index="1"]
 
@@ -60,6 +69,7 @@ _sections_unfolded = [ "Pause" ]
 
 editor/display_folded = true
 position = Vector2( 820, 340 )
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
 patrol_start_path = NodePath("../start_position_01")
 patrol_mid_path = NodePath("../middle_position_01")
 patrol_end_path = NodePath("../end_position_01")
@@ -86,6 +96,7 @@ _sections_unfolded = [ "Pause" ]
 
 editor/display_folded = true
 position = Vector2( 1300, -260 )
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
 patrol_start_path = NodePath("../start_position_01")
 patrol_mid_path = NodePath("../middle_position_01")
 patrol_end_path = NodePath("../end_position_01")
@@ -127,6 +138,7 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Transform", "Visib
 [node name="sprite" parent="Player" index="1"]
 
 z_as_relative = false
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Light2D" parent="Player" index="14"]
 

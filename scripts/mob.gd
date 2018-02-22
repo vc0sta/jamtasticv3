@@ -78,7 +78,7 @@ func fade_visibilty(in_out):
         
     effect.interpolate_property(vision_light, 'energy', from, to, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
     effect.interpolate_property(self, "modulate", 
-            Color(1, 1, 1, from), Color(1, 1, 1, to), 0.2, 
+            Color(1, 1, 1, from), Color(1, 1, 1, to), 0.1, 
             Tween.TRANS_LINEAR, Tween.EASE_IN)
             
             
@@ -141,3 +141,4 @@ func _on_path_timer_timeout():
 
 func _on_alert_timer_timeout():
     alert = false
+    alert_vel = 4

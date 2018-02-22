@@ -4,7 +4,7 @@
 
 [node name="nav" type="Navigation2D" parent="." index="0"]
 
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Material", "Transform", "Z Index" ]
 
 [node name="map" type="TileMap" parent="nav" index="0"]
 
@@ -25,10 +25,11 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
-_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+_sections_unfolded = [ "Cell", "Collision", "Material", "Transform" ]
 
 [node name="world_pos" type="Position2D" parent="nav" index="1"]
 
 position = Vector2( -16.3245, -23.1264 )
+_sections_unfolded = [ "Material" ]
 
 

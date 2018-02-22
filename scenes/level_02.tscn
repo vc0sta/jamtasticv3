@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/CanvasModulate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
 
-[node name="level_01" index="0" instance=ExtResource( 1 )]
+[node name="level_01" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
@@ -33,6 +33,7 @@ _sections_unfolded = [ "Pause" ]
 [node name="mob" parent="mob_container/enemy_01" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 830, -220 )
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
 patrol_start_path = NodePath("../start_position_01")
 patrol_mid_path = NodePath("../middle_position_01")
 patrol_end_path = NodePath("../end_position_01")
@@ -42,20 +43,23 @@ nav_path = NodePath("../../../nav")
 [node name="start_position_01" type="Position2D" parent="mob_container/enemy_01" index="1"]
 
 position = Vector2( 840, -290 )
+_sections_unfolded = [ "Material" ]
 
 [node name="middle_position_01" type="Position2D" parent="mob_container/enemy_01" index="2"]
 
 position = Vector2( 900, 30 )
+_sections_unfolded = [ "Material" ]
 
 [node name="end_position_01" type="Position2D" parent="mob_container/enemy_01" index="3"]
 
 position = Vector2( 1290, -160 )
+_sections_unfolded = [ "Material" ]
 
 [node name="sound_source" parent="." index="2" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 position = Vector2( 1500, 30 )
 script = ExtResource( 6 )
+_sections_unfolded = [ "Material" ]
 
 [node name="interact_button" parent="sound_source" index="3"]
 
@@ -64,12 +68,13 @@ z_as_relative = false
 [node name="CanvasModulate" parent="." index="3" instance=ExtResource( 7 )]
 
 color = Color( 0.148438, 0.148438, 0.148438, 1 )
+_sections_unfolded = [ "Material" ]
 
 [node name="Player" parent="." index="4" instance=ExtResource( 8 )]
 
 editor/display_folded = true
 position = Vector2( 540, -400 )
-_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Audio Bus", "Collision", "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" parent="Player" index="1"]
 
@@ -78,7 +83,6 @@ z_as_relative = false
 [node name="Light2D" parent="Player" index="14"]
 
 shadow_color = Color( 0.0110588, 0.0390625, 0.0390625, 0 )
-_sections_unfolded = [ "Material", "Range", "Shadow", "Transform", "Z Index" ]
 
 [node name="Light2D2" parent="Player" index="15"]
 

@@ -3,5 +3,6 @@
 [node name="CanvasModulate" type="CanvasModulate"]
 
 color = Color( 0.457031, 0.457031, 0.457031, 1 )
+_sections_unfolded = [ "Material", "Visibility" ]
 
 
