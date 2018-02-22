@@ -43,15 +43,15 @@ func set_nav(new_nav):
     nav = new_nav
     update_path()
 #
-func _draw():
-    for p in path:
-        if p == path[0]:
-          last_point = p 
-        elif path[path.size()-1] == p:
-            pass
-        else:
-            draw_line(last_point-position, p-position, Color(255, 0, 0), 1)
-            last_point = p
+#func _draw():
+#    for p in path:
+#        if p == path[0]:
+#          last_point = p 
+#        elif path[path.size()-1] == p:
+#            pass
+#        else:
+#            draw_line(last_point-position, p-position, Color(255, 0, 0), 1)
+#            last_point = p
 
 func update_path():
 #    goal = patrol_mid.position

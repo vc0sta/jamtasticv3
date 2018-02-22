@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/CanvasModulate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
 
-[node name="level_01" instance=ExtResource( 1 )]
+[node name="level_01" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
@@ -40,6 +40,14 @@ patrol_end_path = NodePath("../end_position_01")
 player_path = NodePath("../../../Player")
 nav_path = NodePath("../../../nav")
 
+[node name="sprite" parent="mob_container/enemy_01/mob" index="0"]
+
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="vision" parent="mob_container/enemy_01/mob" index="4"]
+
+_sections_unfolded = [ "Material", "Range", "Shadow", "Transform", "Visibility" ]
+
 [node name="start_position_01" type="Position2D" parent="mob_container/enemy_01" index="1"]
 
 position = Vector2( 840, -290 )
@@ -59,7 +67,6 @@ _sections_unfolded = [ "Material" ]
 
 position = Vector2( 1500, 30 )
 script = ExtResource( 6 )
-_sections_unfolded = [ "Material" ]
 
 [node name="interact_button" parent="sound_source" index="3"]
 
@@ -68,7 +75,6 @@ z_as_relative = false
 [node name="CanvasModulate" parent="." index="3" instance=ExtResource( 7 )]
 
 color = Color( 0.148438, 0.148438, 0.148438, 1 )
-_sections_unfolded = [ "Material" ]
 
 [node name="Player" parent="." index="4" instance=ExtResource( 8 )]
 
@@ -79,6 +85,7 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Transform", "Visib
 [node name="sprite" parent="Player" index="1"]
 
 z_as_relative = false
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Light2D" parent="Player" index="14"]
 

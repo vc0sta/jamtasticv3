@@ -2,10 +2,10 @@
 
 [ext_resource path="res://scenes/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/mob.gd" type="Script" id=2]
-[ext_resource path="res://arte/player/knight iso char_slice right_1.png" type="Texture" id=3]
-[ext_resource path="res://arte/player/knight iso char_slice left_1.png" type="Texture" id=4]
-[ext_resource path="res://arte/player/knight iso char_slice up_2.png" type="Texture" id=5]
-[ext_resource path="res://arte/player/knight iso char_slice down_2.png" type="Texture" id=6]
+[ext_resource path="res://arte/temer_player/player_12.png" type="Texture" id=3]
+[ext_resource path="res://arte/temer_player/player_6.png" type="Texture" id=4]
+[ext_resource path="res://arte/temer_player/player_15.png" type="Texture" id=5]
+[ext_resource path="res://arte/temer_player/player_0.png" type="Texture" id=6]
 [ext_resource path="res://scenes/vision.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -38,7 +38,7 @@ position = Vector2( 0, 0 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
-_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
 patrol_start_path = null
 patrol_mid_path = null
 patrol_end_path = null
@@ -49,18 +49,13 @@ nav_path = null
 
 frames = SubResource( 1 )
 animation = "right"
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="vision" parent="." index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 0, 0 )
 rotation = -6.28319
-_sections_unfolded = [ "Material", "Range", "Shadow", "Transform" ]
-
-[node name="Sprite" parent="vision/RayCast2D" index="0"]
-
-visible = true
-_sections_unfolded = [ "Material", "Transform" ]
+_sections_unfolded = [ "Material", "Range", "Shadow", "Transform", "Visibility" ]
 
 [node name="vision_effect" type="Tween" parent="." index="5"]
 

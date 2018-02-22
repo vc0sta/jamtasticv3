@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://arte/npc/vision.png" type="Texture" id=1]
 [ext_resource path="res://scripts/vision.gd" type="Script" id=2]
-[ext_resource path="res://arte/ray_debug.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -74,13 +73,6 @@ exclude_parent = true
 cast_to = Vector2( 0, 390 )
 collision_mask = 526336
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
-
-[node name="Sprite" type="Sprite" parent="RayCast2D" index="0"]
-
-visible = false
-position = Vector2( 0, 195.542 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
 
 [connection signal="area_entered" from="vision_range" to="." method="_on_vision_range_area_entered"]
 
