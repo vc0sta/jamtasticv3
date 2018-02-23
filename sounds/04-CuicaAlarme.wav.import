@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/04-CuicaAlarme.wav-1922e6b2baf6321d516b78ae296d9f95.sample"
+
+[deps]
+
+source_file="res://sounds/04-CuicaAlarme.wav"
+source_md5="cb5329e68fab0e9e4eaedd05b732355a"
+
+dest_files=[ "res://.import/04-CuicaAlarme.wav-1922e6b2baf6321d516b78ae296d9f95.sample" ]
+dest_md5="12511c91d6d426c07480909230df704c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

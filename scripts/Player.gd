@@ -9,11 +9,14 @@ signal can_interact
 signal cannot_interact
 
 func _process(delta):
+    var was_moved = false
     for dir in moves.keys():
         if Input.is_action_pressed(dir):
             move(dir)
+            
         if Input.is_action_just_released(dir):
             sprite.play(facing+'_idle')
+
         
     var joy = Vector2(Input.get_joy_axis(0,2),-Input.get_joy_axis(0,3))
 

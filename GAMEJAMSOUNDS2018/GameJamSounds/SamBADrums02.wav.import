@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SamBADrums02.wav-292f833b9472d04f7b772b94f6480764.sample"
+
+[deps]
+
+source_file="res://GAMEJAMSOUNDS2018/GameJamSounds/SamBADrums02.wav"
+source_md5="271c3b52b28e9d2a2d45806e22fc79ee"
+
+dest_files=[ "res://.import/SamBADrums02.wav-292f833b9472d04f7b772b94f6480764.sample" ]
+dest_md5="c37338b5458733d567b4fcddffa3fe37"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

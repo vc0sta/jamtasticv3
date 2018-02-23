@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/02-FicaLigeiro70bpm.wav-6af6e37e90a08e98340ef822119b7a8c.sample"
+
+[deps]
+
+source_file="res://sounds/02-FicaLigeiro70bpm.wav"
+source_md5="9e1290bdb47846afc1dd7d0ead18ece4"
+
+dest_files=[ "res://.import/02-FicaLigeiro70bpm.wav-6af6e37e90a08e98340ef822119b7a8c.sample" ]
+dest_md5="634db555766335f5079352f55ef88a73"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

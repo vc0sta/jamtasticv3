@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Switch.gd" type="Script" id=1]
+[ext_resource path="res://arte/map/switch-on.png" type="Texture" id=2]
+[ext_resource path="res://arte/buttons/X.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 40.7316, 41.3147 )
+
+[node name="Switch" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+on = true
+tile_map = null
+tiles = [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="interactable_area" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="button" type="Sprite" parent="." index="2"]
+
+visible = false
+texture = ExtResource( 3 )
+
+[connection signal="area_entered" from="." to="." method="_on_Switch_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_Switch_area_exited"]
+
+
