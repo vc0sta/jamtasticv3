@@ -22,6 +22,7 @@ var last_point
 var goal = Vector2()
 var alert = false
 var is_visible = false
+var needs_update = true
 
 var last_print = ''
 
@@ -32,10 +33,10 @@ func _ready():
     
 
 func set_nav(new_nav):
+    print( "set_nav %s" % nav )
     nav = new_nav
-    print(nav)
-    update_path()
-#
+    needs_update = true
+
 #func _draw():
 #    for p in path:
 #        if p == path[0]:
@@ -50,7 +51,9 @@ func update_path():
     goal = patrol_end.position
     path = nav.get_simple_path(position, goal, false)
     if path.size() == 0:
-        queue_free()
+        pass
+        #queue_free()
+    needs_update = false
         
 func fade_visibilty(in_out):
     var from = 0
@@ -69,6 +72,9 @@ func fade_visibilty(in_out):
             
             
 func _process(delta):
+    if needs_update:
+        update_path()
+    
     
     if position.distance_to(patrol_end.position) < 80:
         patrol_end.position = patrol_start.position
