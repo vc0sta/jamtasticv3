@@ -9,10 +9,15 @@ signal can_interact
 signal cannot_interact
 
 func _process(delta):
+    var was_moved = false
     for dir in moves.keys():
         if Input.is_action_pressed(dir):
             move(dir)
+            was_moved = true
 
+    if !was_moved:
+        go_idle() # stops the animation if no direction is pressed
+        
     var joy = Vector2(Input.get_joy_axis(0,2),-Input.get_joy_axis(0,3))
 
     if joy.x > -0.2 and joy.x < 0.2 and joy.y > -0.2 and joy.y < 0.2:

@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://arte/map/tileset.png" type="Texture" id=1]
+[ext_resource path="res://arte/map/wall-up.png" type="Texture" id=2]
+[ext_resource path="res://arte/map/wall-left.png" type="Texture" id=3]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -29,6 +31,24 @@ polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 5, -32, 5 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="OccluderPolygon2D" id=8]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -32, -32, 5, -32, 5, 32, -32, 32 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -62,7 +82,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D" index="0"]
 
@@ -95,7 +115,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite18/StaticBody2D2" index="0"]
 
@@ -188,7 +208,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite25/StaticBody2D6" index="0"]
 
@@ -200,5 +220,59 @@ _sections_unfolded = [ "Transform" ]
 occluder = SubResource( 4 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
+
+[node name="DoorUp" type="Sprite" parent="." index="6"]
+
+position = Vector2( 448, 0 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DoorUp" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorUp/StaticBody2D" index="0"]
+
+shape = SubResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="DoorUp" index="1"]
+
+occluder = SubResource( 7 )
+light_mask = 1
+
+[node name="DoorLeft" type="Sprite" parent="." index="7"]
+
+position = Vector2( 512, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DoorLeft" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLeft/StaticBody2D" index="0"]
+
+shape = SubResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="DoorLeft" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
 
 

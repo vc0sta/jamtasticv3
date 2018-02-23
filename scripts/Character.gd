@@ -29,6 +29,9 @@ func move(dir):
     vel = input.normalized() * speed
     position = position + vel
     
+func go_idle():
+    sprite.play('idle')
+    
 
 func _on_tween_tween_completed( object, key ):
     can_move = true
