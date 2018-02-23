@@ -12,7 +12,9 @@ func _process(delta):
     for dir in moves.keys():
         if Input.is_action_pressed(dir):
             move(dir)
-
+        if Input.is_action_just_released(dir):
+            sprite.play(facing+'_idle')
+        
     var joy = Vector2(Input.get_joy_axis(0,2),-Input.get_joy_axis(0,3))
 
     if joy.x > -0.2 and joy.x < 0.2 and joy.y > -0.2 and joy.y < 0.2:
