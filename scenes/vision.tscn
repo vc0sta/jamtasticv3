@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://arte/npc/vision.png" type="Texture" id=1]
 [ext_resource path="res://scripts/vision.gd" type="Script" id=2]
-[ext_resource path="res://arte/ray_debug.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -19,7 +18,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 30, 0 )
 texture_scale = 1.0
 color = Color( 0.238281, 0.80362, 1, 1 )
-energy = 0.6
+energy = 0.01
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -35,11 +34,12 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 script = ExtResource( 2 )
-_sections_unfolded = [ "Range", "Shadow", "Transform" ]
+_sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 visible = false
+position = Vector2( 28.5792, 10.5292 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -60,7 +60,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="vision_collision" type="CollisionShape2D" parent="vision_range" index="0"]
 
-scale = Vector2( 9.16472, 15.8019 )
+position = Vector2( 3.39115, -35.5408 )
+scale = Vector2( 19.4749, 11.7207 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -70,15 +71,8 @@ position = Vector2( -1.14464, -23.6105 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 390 )
-collision_mask = 524289
+collision_mask = 526336
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
-
-[node name="Sprite" type="Sprite" parent="RayCast2D" index="0"]
-
-visible = false
-position = Vector2( 0, 195.542 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
 
 [connection signal="area_entered" from="vision_range" to="." method="_on_vision_range_area_entered"]
 

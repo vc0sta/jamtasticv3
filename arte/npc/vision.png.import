@@ -7,10 +7,10 @@ path="res://.import/vision.png-e3d54f06b33aaf71d936715a44d50d87.stex"
 [deps]
 
 source_file="res://arte/npc/vision.png"
-source_md5="b675256c32489642dc31279e5e522c86"
+source_md5="f5b1dec913605441c79fbddf5a15679b"
 
 dest_files=[ "res://.import/vision.png-e3d54f06b33aaf71d936715a44d50d87.stex" ]
-dest_md5="1ca3efb2aba183b9dec6e28262a14cc7"
+dest_md5="ebc43a45916c0d3e9a86e3e2c4ec6ea4"
 
 [params]
 
