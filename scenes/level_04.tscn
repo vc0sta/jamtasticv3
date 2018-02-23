@@ -35,15 +35,22 @@ _sections_unfolded = [ "Pause" ]
 
 position = Vector2( 800, -420 )
 patrol_start_path = NodePath("../start_position_01")
+patrol_mid_path = NodePath("../mid_position_01")
 patrol_end_path = NodePath("../end_position_01")
 player_path = NodePath("../../../Player")
 nav_path = NodePath("../../../nav")
+GUI_path = NodePath("../../../CanvasLayer/GUI")
 
 [node name="start_position_01" type="Position2D" parent="mob_container/enemy_01" index="1"]
 
 position = Vector2( 790, -430 )
 
-[node name="end_position_01" type="Position2D" parent="mob_container/enemy_01" index="2"]
+[node name="mid_position_01" type="Position2D" parent="mob_container/enemy_01" index="2"]
+
+position = Vector2( 803.296, 217.175 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="end_position_01" type="Position2D" parent="mob_container/enemy_01" index="3"]
 
 position = Vector2( 1300, 230 )
 
@@ -65,7 +72,7 @@ color = Color( 0.148438, 0.148438, 0.148438, 1 )
 
 editor/display_folded = true
 position = Vector2( 800.219, -356.323 )
-_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Audio Bus", "Collision", "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" parent="Player" index="1"]
 
@@ -74,7 +81,6 @@ z_as_relative = false
 [node name="Light2D" parent="Player" index="14"]
 
 shadow_color = Color( 0.0110588, 0.0390625, 0.0390625, 0 )
-_sections_unfolded = [ "Material", "Range", "Shadow", "Transform", "Z Index" ]
 
 [node name="Light2D2" parent="Player" index="15"]
 
