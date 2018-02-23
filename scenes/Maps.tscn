@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=1]
 
 [node name="Maps" type="Node"]
 
@@ -31,5 +33,23 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Transform" ]
 
 position = Vector2( -16.3245, -23.1264 )
 _sections_unfolded = [ "Material" ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 1 )]
+
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_top = 40.0
+margin_right = 512.0
+margin_bottom = 80.0
+_sections_unfolded = [ "Margin", "custom_constants" ]
 
 

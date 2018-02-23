@@ -5,6 +5,13 @@ export(NodePath) var patrol_mid_path
 export(NodePath) var patrol_end_path
 export(NodePath) var player_path
 export(NodePath) var nav_path
+export(NodePath) var GUI_path
+
+onready var patrol_start = get_node(patrol_start_path)
+onready var patrol_mid = get_node(patrol_mid_path)
+onready var patrol_end = get_node(patrol_end_path)
+onready var nav = get_node(nav_path) setget set_nav
+
 
 onready var player = get_node(player_path)
 onready var vision = get_node('vision/vision_range')
@@ -13,11 +20,9 @@ onready var vision_raycast = get_node('vision/RayCast2D')
 onready var effect = get_node("vision_effect")
 onready var path_timer = get_node('path_timer')
 onready var alert_timer = get_node('alert_timer')
+onready var warning_timer = get_node('warning_timer')
+onready var GUI = get_node(GUI_path)
 
-onready var patrol_start = get_node(patrol_start_path)
-onready var patrol_mid = get_node(patrol_mid_path)
-onready var patrol_end = get_node(patrol_end_path)
-onready var nav = get_node(nav_path) setget set_nav
 
 var alert_vel = 4
 var speed = 500
@@ -83,7 +88,6 @@ func fade_visibilty(in_out):
             
             
 func _process(delta):
-        
     if position.distance_to(goal) < 100:
         patrol_mid.position = patrol_end.position
         patrol_end.position = patrol_start.position
@@ -106,7 +110,6 @@ func _process(delta):
     
     
     if vision_raycast.is_colliding():
-        print(vision_raycast.get_collider().name)
 #        if vision_raycast.get_collider().name != last_print:
 #            last_print = vision_raycast.get_collider().name
 #            print(last_print)
@@ -140,5 +143,22 @@ func _on_path_timer_timeout():
 
 
 func _on_alert_timer_timeout():
+    print('alert_timer off')
+    warning_timer.stop()
+    warning_timer.wait_time = 3
+    warning_timer.start()
+    GUI.get_child(0).get_child(0).visible = false
+    GUI.get_child(0).get_child(1).visible = true
     alert = false
     alert_vel = 4
+
+
+func _on_vision_GUI_change():
+    GUI.get_child(0).get_child(1).visible = false
+    GUI.get_child(0).get_child(0).visible = true
+
+
+func _on_warning_timer_timeout():
+    
+    print('warning_timer off')
+    GUI.get_child(0).get_child(1).visible = false

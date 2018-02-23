@@ -44,6 +44,7 @@ patrol_mid_path = null
 patrol_end_path = null
 player_path = null
 nav_path = null
+GUI_path = null
 
 [node name="sprite" parent="." index="0"]
 
@@ -77,12 +78,23 @@ autostart = false
 
 process_mode = 1
 wait_time = 3.0
-one_shot = false
+one_shot = true
 autostart = false
+
+[node name="warning_timer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
+[connection signal="GUI_change" from="vision" to="." method="_on_vision_GUI_change"]
 
 [connection signal="timeout" from="path_timer" to="." method="_on_path_timer_timeout"]
 
 [connection signal="timeout" from="alert_timer" to="." method="_on_alert_timer_timeout"]
+
+[connection signal="timeout" from="warning_timer" to="." method="_on_warning_timer_timeout"]
 
 
 [editable path="vision"]

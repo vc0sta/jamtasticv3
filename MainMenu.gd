@@ -49,6 +49,6 @@ func _input(event):
         if (index == 0):
             print("Como jogar")
         if (index == 1):
-            get_node("/root/global").goto_scene("res://scenes/level_01.tscn")
+            get_node("/root/global").goto_scene("res://scenes/level_03.tscn")
         if(index == 2):
             get_tree().quit()

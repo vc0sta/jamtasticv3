@@ -13,6 +13,10 @@
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause" ]
 
+[node name="nav" parent="." index="0"]
+
+editor/display_folded = true
+
 [node name="map" parent="nav" index="0"]
 
 tile_set = ExtResource( 3 )
@@ -28,6 +32,7 @@ position = Vector2( 580.332, 281.496 )
 
 [node name="sound_source" parent="." index="2" instance=ExtResource( 4 )]
 
+editor/display_folded = true
 position = Vector2( 1110, -420 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Visibility", "Z Index" ]
@@ -44,13 +49,10 @@ visible = true
 
 [node name="Player" parent="." index="4" instance=ExtResource( 7 )]
 
+editor/display_folded = true
 position = Vector2( 580, -410 )
 z_as_relative = false
 _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
-
-[node name="sprite" parent="Player" index="1"]
-
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="area_entered" from="sound_source" to="Player" method="_on_sound_source_area_entered"]
 
