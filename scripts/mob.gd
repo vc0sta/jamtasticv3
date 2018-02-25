@@ -12,7 +12,7 @@ onready var patrol_mid = get_node(patrol_mid_path)
 onready var patrol_end = get_node(patrol_end_path)
 onready var nav = get_node(nav_path) setget set_nav
 
-
+onready var map = get_node('../../../Switch')
 onready var player = get_node(player_path)
 onready var vision = get_node('vision/vision_range')
 onready var vision_light = get_node('vision')
@@ -160,11 +160,15 @@ func _on_alert_timer_timeout():
 
 
 func _on_vision_GUI_change():
+    map.close()
     GUI.get_child(0).get_child(1).visible = false
     GUI.get_child(0).get_child(0).visible = true
 
 
 func _on_warning_timer_timeout():
-    
-    print('warning_timer off')
+    map.open()
     GUI.get_child(0).get_child(1).visible = false
+
+
+func _on_map_settings_changed():
+    pass # replace with function body

@@ -12,6 +12,7 @@ func _ready():
         
 func _input(event):
     if Input.is_action_just_pressed('interact') and button.visible:
+        get_node("/root/global").next_level()
         audio.playing = false
 
 

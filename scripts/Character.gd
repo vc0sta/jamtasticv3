@@ -18,6 +18,7 @@ var raycasts = {'right': 'RayCastRight',
                 'up': 'RayCastUp',
                 'down': 'RayCastDown'}
 
+
  
 func move(dir):
     var input = Vector2(0, 0)
@@ -25,12 +26,12 @@ func move(dir):
     if get_node(raycasts[facing]).is_colliding() or get_node(raycasts[facing]+'2').is_colliding():
         return
     input = moves[dir]
-    sprite.play(facing)
     vel = input.normalized() * speed
+    sprite.play(facing) 
     position = position + vel
-    
-func go_idle():
-    sprite.play('idle')
+
+#func go_idle():
+#    sprite.play('idle')
     
 
 func _on_tween_tween_completed( object, key ):

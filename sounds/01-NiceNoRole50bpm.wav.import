@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/01-NiceNoRole50bpm.wav-31002c906d4ee42807141207ae0f81c2.sample"
+
+[deps]
+
+source_file="res://sounds/01-NiceNoRole50bpm.wav"
+source_md5="e59efc92f8384cd6645d09b970f36055"
+
+dest_files=[ "res://.import/01-NiceNoRole50bpm.wav-31002c906d4ee42807141207ae0f81c2.sample" ]
+dest_md5="1da84c2d9fdad6f36f56e8d38c2cc7d2"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

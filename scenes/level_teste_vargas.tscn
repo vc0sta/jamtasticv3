@@ -33,6 +33,8 @@ tiles = [ Vector2( 9, -1 ), Vector2( 9, 0 ) ]
 
 [node name="mob_container" type="Node" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="enemy_01" type="Node" parent="mob_container" index="0"]
 
 _sections_unfolded = [ "Pause" ]

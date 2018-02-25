@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/03-IhMoio100bpm.wav-5afe9dc315b02f4bdd28e83662f7bbc8.sample"
+
+[deps]
+
+source_file="res://sounds/03-IhMoio100bpm.wav"
+source_md5="62400440fa78b25233ee51eee835400a"
+
+dest_files=[ "res://.import/03-IhMoio100bpm.wav-5afe9dc315b02f4bdd28e83662f7bbc8.sample" ]
+dest_md5="0825d076f519b4f73754f9364ba16715"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

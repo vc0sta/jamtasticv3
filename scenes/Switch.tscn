@@ -21,7 +21,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 on = true
 tile_map = null
-tiles = [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+tiles = [ Vector2( 21, 0 ) ]
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

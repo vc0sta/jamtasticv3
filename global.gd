@@ -2,6 +2,10 @@ extends Node
 
 var current_scene = null
 
+var level = ['01','02','03','04']
+
+var current = 0
+
 func _ready():
         var root = get_tree().get_root()
         current_scene = root.get_child( root.get_child_count() -1 )
@@ -19,6 +23,14 @@ func goto_scene(path):
 
     call_deferred("_deferred_goto_scene",path)
 
+        
+func next_level():
+    current += 1
+    if current == level.size():
+        current = 0
+        call_deferred("_deferred_goto_scene","res://MainMenu.tscn")
+    else:
+        call_deferred("_deferred_goto_scene","res://scenes/level_" + level[current]+ ".tscn")
 
 func _deferred_goto_scene(path):
 

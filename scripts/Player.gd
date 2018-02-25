@@ -13,10 +13,10 @@ func _process(delta):
     for dir in moves.keys():
         if Input.is_action_pressed(dir):
             move(dir)
-            was_moved = true
+            
+        if Input.is_action_just_released(dir):
+            sprite.play(facing+'_idle')
 
-    if !was_moved:
-        go_idle() # stops the animation if no direction is pressed
         
     var joy = Vector2(Input.get_joy_axis(0,2),-Input.get_joy_axis(0,3))
 
