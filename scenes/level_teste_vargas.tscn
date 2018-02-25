@@ -10,7 +10,7 @@
 [ext_resource path="res://scenes/CanvasModulate.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=9]
 
-[node name="level_test" index="0" instance=ExtResource( 1 )]
+[node name="level_test" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
@@ -100,6 +100,10 @@ position = Vector2( 821.296, -61.6134 )
 on = false
 tile_map = NodePath("../nav/map")
 tiles = [ Vector2( 12, -4 ), Vector2( 13, -4 ) ]
+
+[node name="GUI" parent="CanvasLayer" index="0"]
+
+_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
 
 [connection signal="settings_changed" from="nav/map" to="." method="_on_map_settings_changed"]
 
