@@ -7,10 +7,10 @@ path="res://.import/como_jogar.png-98262bb918a1d9e259a0c2c20f660f95.stex"
 [deps]
 
 source_file="res://menu/como_jogar.png"
-source_md5="ee964241bdaa6177f4122c4e685c3237"
+source_md5="ea61285c56d3461aaa1e37a8cefbfd60"
 
 dest_files=[ "res://.import/como_jogar.png-98262bb918a1d9e259a0c2c20f660f95.stex" ]
-dest_md5="9dfdddce7ea950e2dc25cca7d2560dc1"
+dest_md5="13cd4425637aef10c11318a758a43b98"
 
 [params]
 

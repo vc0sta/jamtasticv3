@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://arte/map/tileset.png" type="Texture" id=1]
-[ext_resource path="res://arte/map/wall-up.png" type="Texture" id=2]
-[ext_resource path="res://arte/map/wall-left.png" type="Texture" id=3]
+[ext_resource path="res://arte/map/tileset_luiz.png" type="Texture" id=1]
+[ext_resource path="res://arte/map/tileset.png" type="Texture" id=2]
+[ext_resource path="res://arte/map/wall-up.png" type="Texture" id=3]
+[ext_resource path="res://arte/map/wall-left.png" type="Texture" id=4]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -32,12 +33,12 @@ polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=10]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="OccluderPolygon2D" id=7]
+[sub_resource type="OccluderPolygon2D" id=9]
 
 closed = true
 cull_mode = 0
@@ -56,7 +57,7 @@ polygon = PoolVector2Array( -32, -32, 5, -32, 5, 32, -32, 32 )
 
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 384, 64, 64, 64 )
+region_rect = Rect2( 320, 448, 64, 64 )
 _sections_unfolded = [ "Region", "Transform" ]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Sprite10" index="0"]
@@ -68,7 +69,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 [node name="Sprite3" type="Sprite" parent="." index="1"]
 
 position = Vector2( 64, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 128, 0, 64, 64 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
@@ -97,7 +98,7 @@ light_mask = 1
 [node name="Sprite18" type="Sprite" parent="." index="2"]
 
 position = Vector2( 128, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 64, 128, 64, 64 )
 region_filter_clip = true
@@ -131,7 +132,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite26" type="Sprite" parent="." index="3"]
 
 position = Vector2( 192, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 64, 448, 64, 64 )
 region_filter_clip = true
@@ -162,7 +163,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite27" type="Sprite" parent="." index="4"]
 
 position = Vector2( 256, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 128, 448, 64, 64 )
 region_filter_clip = true
@@ -193,7 +194,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite25" type="Sprite" parent="." index="5"]
 
 position = Vector2( 384, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 384, 448, 64, 64 )
 region_filter_clip = true
@@ -224,7 +225,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="DoorUp" type="Sprite" parent="." index="6"]
 
 position = Vector2( 448, 0 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="DoorUp" index="0"]
@@ -240,18 +241,18 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorUp/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="DoorUp" index="1"]
 
-occluder = SubResource( 7 )
+occluder = SubResource( 9 )
 light_mask = 1
 
 [node name="DoorLeft" type="Sprite" parent="." index="7"]
 
 position = Vector2( 512, 0 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="DoorLeft" index="0"]
@@ -267,7 +268,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLeft/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="DoorLeft" index="1"]

@@ -2,6 +2,8 @@ extends Area2D
 
 onready var button = get_node("interact_button")
 onready var audio = get_node("audio")
+onready var sprite_on = get_node("Sprite2")
+onready var timer = get_node("Timer")
 
 
 func _ready():
@@ -12,8 +14,11 @@ func _ready():
         
 func _input(event):
     if Input.is_action_just_pressed('interact') and button.visible:
-        get_node("/root/global").next_level()
+        sprite_on.visible = false
         audio.playing = false
+        timer.start()
+        
+        
 
 
 
@@ -23,3 +28,7 @@ func _on_Player_can_interact():
 
 func _on_Player_cannot_interact():
     button.visible = false
+
+
+func _on_Timer_timeout():
+    get_node("/root/global").next_level()

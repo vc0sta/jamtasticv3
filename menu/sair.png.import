@@ -7,10 +7,10 @@ path="res://.import/sair.png-199726b2c627d7b865a01be5db01590c.stex"
 [deps]
 
 source_file="res://menu/sair.png"
-source_md5="7427f27e8ffb6abb36a2c5bcfb01913d"
+source_md5="d498bb981779e701d5dc5c9e03c9946c"
 
 dest_files=[ "res://.import/sair.png-199726b2c627d7b865a01be5db01590c.stex" ]
-dest_md5="81a0682ccd6efd7fb80a975a702eccc1"
+dest_md5="fd3e3624fd5384833c7c0658316db149"
 
 [params]
 

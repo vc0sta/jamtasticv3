@@ -7,10 +7,10 @@ path="res://.import/novo_jogo.png-8b0a0f7256c2b54a78d33c3f5657d6ad.stex"
 [deps]
 
 source_file="res://menu/novo_jogo.png"
-source_md5="bd0e8d94760086f954ddfaf2f3225f2a"
+source_md5="1d3e7a731683803207912873522fc674"
 
 dest_files=[ "res://.import/novo_jogo.png-8b0a0f7256c2b54a78d33c3f5657d6ad.stex" ]
-dest_md5="ca4bd0dbbd61319840f873cdc7ee6540"
+dest_md5="9d4bde24b5c4093b39b8d2f1568e3c42"
 
 [params]
 

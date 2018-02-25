@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/como_jogar_selected.png-3320cf1e81dacecfe7cdcb82fc69046c.stex"
+path="res://.import/tileset_luiz.png-ec179fa4ba1f9989c6d4a071f506a322.stex"
 
 [deps]
 
-source_file="res://menu/como_jogar_selected.png"
-source_md5="c6cab17bc01efc88a8120ce13f8683b5"
+source_file="res://arte/map/tileset_luiz.png"
+source_md5="b52469054d932c11c201c1cbec914f17"
 
-dest_files=[ "res://.import/como_jogar_selected.png-3320cf1e81dacecfe7cdcb82fc69046c.stex" ]
-dest_md5="608fa24ddcc0ab7c824f5fe40987ccb0"
+dest_files=[ "res://.import/tileset_luiz.png-ec179fa4ba1f9989c6d4a071f506a322.stex" ]
+dest_md5="09b87e5eccc52c362544a31f791982c2"
 
 [params]
 
