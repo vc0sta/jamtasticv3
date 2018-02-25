@@ -14,16 +14,9 @@ func _ready():
         
 func _input(event):
     if Input.is_action_just_pressed('interact') and button.visible:
-
         sprite_on.visible = false
-#=======
-#        get_node("/root/global").show_stats()
-#>>>>>>> 534730893dcff561bb35c94d494908182e120dee
         audio.playing = false
         timer.start()
-        
-        
-
 
 
 func _on_Player_can_interact():
@@ -35,4 +28,4 @@ func _on_Player_cannot_interact():
 
 
 func _on_Timer_timeout():
-    get_node("/root/global").next_level()
+    get_node("/root/global").show_stats()
