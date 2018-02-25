@@ -14,7 +14,11 @@ func _ready():
         
 func _input(event):
     if Input.is_action_just_pressed('interact') and button.visible:
+
         sprite_on.visible = false
+#=======
+#        get_node("/root/global").show_stats()
+#>>>>>>> 534730893dcff561bb35c94d494908182e120dee
         audio.playing = false
         timer.start()
         

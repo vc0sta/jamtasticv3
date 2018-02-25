@@ -9,7 +9,7 @@
 [ext_resource path="res://menu/jamtastic.png" type="Texture" id=7]
 [ext_resource path="res://menu/ilustration.png" type="Texture" id=8]
 
-[node name="MarginContainer" type="MarginContainer" index="0"]
+[node name="MarginContainer" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
