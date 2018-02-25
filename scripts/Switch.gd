@@ -25,13 +25,26 @@ func _ready():
         var orig = map.get_cellv( tile )
         original_values.append( orig )
     _update_texture()
+    toggle()
 
 func toggle():
     self.on = !on  #using self to trigger the setter
     for i in range(0, tiles.size() ):
         map.set_cellv( tiles[i],  0 if on else original_values[i] )
     map.emit_signal("settings_changed")
-
+    
+func close():
+    self.on = false
+    for i in range(0, tiles.size() ):
+        map.set_cellv( tiles[i],  0 if on else original_values[i] )
+    map.emit_signal("settings_changed")
+    
+func open():
+    self.on = true
+    for i in range(0, tiles.size() ):
+        map.set_cellv( tiles[i],  0 if on else original_values[i] )
+    map.emit_signal("settings_changed")
+    
 func _input(event):
     if Input.is_action_just_pressed('interact') and button.visible:
         toggle()

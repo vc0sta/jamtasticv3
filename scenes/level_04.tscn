@@ -10,7 +10,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Switch.tscn" type="PackedScene" id=9]
 
-[node name="level_01" index="0" instance=ExtResource( 1 )]
+[node name="level_04" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
@@ -26,6 +26,8 @@ tile_data = PoolIntArray( -524277, 2, 0, -524276, 4, 0, -524275, 3, 0, -524274, 
 position = Vector2( 580.332, 281.496 )
 
 [node name="mob_container" type="Node" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="enemy_01" type="Node" parent="mob_container" index="0"]
 
