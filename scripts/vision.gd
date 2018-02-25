@@ -1,6 +1,7 @@
 extends Light2D
 
 onready var raycast = get_node('RayCast2D')
+onready var global = get_node("/root/global")
 
 var can_spot = false
 var spotted = false
@@ -15,6 +16,7 @@ func _process(delta):
         if raycast.is_colliding():
             if raycast.get_collider().name == 'Player':
                 spotted = true
+                global.spotted_player()
                 color = Color(1.0,0,0,1)
                 get_parent().alert = true
     

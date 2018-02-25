@@ -4,6 +4,13 @@ const SHOOT_SCENE = preload('res://scenes/mask.tscn')
 onready var cursor = get_node("cursor")
 onready var timer = get_node("shoot_timer")
 onready var can_shoot = true
+var angles = {
+    'right': -PI/2,
+    'left': PI/2,
+    'up': PI,
+    'down': 0
+}
+
 
 signal can_interact
 signal cannot_interact
@@ -12,6 +19,7 @@ func _process(delta):
     var was_moved = false
     for dir in moves.keys():
         if Input.is_action_pressed(dir):
+            $Light2D.rotation = angles[dir]
             move(dir)
             
         if Input.is_action_just_released(dir):

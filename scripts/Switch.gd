@@ -24,13 +24,16 @@ func _ready():
     for tile in tiles:
         var orig = map.get_cellv( tile )
         original_values.append( orig )
+        #print( "%s - %d, %d: %d" % [ name, tile.x, tile.y, map.get_cellv( tile) ] )
     _update_texture()
     toggle()
 
 func toggle():
     self.on = !on  #using self to trigger the setter
     for i in range(0, tiles.size() ):
-        map.set_cellv( tiles[i],  0 if on else original_values[i] )
+        var tile = tiles[i]
+        #print( " - %d, %d: %d" % [ tile.x, tile.y, map.get_cellv( tile) ] )
+        map.set_cellv( tile,  0 if on else original_values[i] )
     map.emit_signal("settings_changed")
     
 func close():

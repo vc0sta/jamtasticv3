@@ -118,10 +118,10 @@ func _process(delta):
     if vision_raycast.is_colliding():
 #        if vision_raycast.get_collider().name != last_print:
 #            last_print = vision_raycast.get_collider().name
-#            print(last_print)
+            
         if vision_raycast.get_collider().name == 'Player':
             if is_visible == false:
-                fade_visibilty(1)    
+                fade_visibilty(1)
         elif is_visible == true:
             fade_visibilty(0)
     
