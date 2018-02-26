@@ -21,7 +21,10 @@ onready var effect = get_node("vision_effect")
 onready var path_timer = get_node('path_timer')
 onready var alert_timer = get_node('alert_timer')
 onready var warning_timer = get_node('warning_timer')
+onready var sprite = get_node('sprite')
 onready var GUI = get_node(GUI_path)
+
+onready var cuica = get_node("vision/cuica")
 
 
 var alert_vel = 4
@@ -88,7 +91,8 @@ func fade_visibilty(in_out):
     effect.interpolate_property(self, "modulate", 
             Color(1, 1, 1, from), Color(1, 1, 1, to), 0.1, 
             Tween.TRANS_LINEAR, Tween.EASE_IN)
-            
+    
+    
             
 func _process(delta):
     if needs_update:
@@ -111,7 +115,19 @@ func _process(delta):
             path.remove(0)
     else:
         update_path()
-       
+   
+    var direction = position - path[0]
+    if abs(direction.y) > abs(direction.x):
+        if direction.y < 0:
+            sprite.play('down')
+        else:
+            sprite.play('up')
+    else:            
+        if direction.x > 0:
+            sprite.play('left')
+        else:
+            sprite.play('right')
+
     vision_raycast.rotation_degrees = rad2deg((player.position - position).angle())-vision_light.rotation_degrees - 90 
     
     
@@ -160,6 +176,7 @@ func _on_alert_timer_timeout():
 
 
 func _on_vision_GUI_change():
+    cuica.playing = true
     map.close()
     GUI.get_child(0).get_child(0).get_child(1).visible = false
     GUI.get_child(0).get_child(0).get_child(0).visible = true
@@ -167,6 +184,7 @@ func _on_vision_GUI_change():
 
 func _on_warning_timer_timeout():
     map.open()
+    cuica.playing = false
     GUI.get_child(0).get_child(1).visible = false
 
 
