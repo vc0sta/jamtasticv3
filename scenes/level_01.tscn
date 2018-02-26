@@ -8,13 +8,14 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://arte/map/tilesets/mao_objects.tres" type="TileSet" id=7]
 
-[node name="level_01" index="0" instance=ExtResource( 1 )]
+[node name="level_01" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="map" parent="nav" index="0"]
 
+position = Vector2( -3.79468, 0 )
 tile_set = ExtResource( 3 )
 collision_layer = 1015809
 collision_mask = 1015809
@@ -52,6 +53,7 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pickable", "Transf
 [node name="decoration" type="TileMap" parent="." index="5"]
 
 show_behind_parent = true
+position = Vector2( 0, -1 )
 mode = 0
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 64, 64 )
@@ -70,6 +72,14 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -589813, 4, 0, -589810, 4, 0, -524277, 0, 0, -524274, 1, 0, -458742, 4, 0, -458737, 4, 0, -327670, 4, 0, -327665, 4, 0, -262133, 4, 0, -262132, 5, 0, -262130, 4, 0 )
 _sections_unfolded = [ "Collision", "Visibility", "Z Index" ]
+
+[node name="GUI" parent="CanvasLayer" index="0"]
+
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+_sections_unfolded = [ "Anchor", "Focus", "Hint", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="decoration_top" type="TileMap" parent="." index="7"]
 

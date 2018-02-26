@@ -55,6 +55,7 @@ polygon = PoolVector2Array( -32, -32, 5, -32, 5, 32, -32, 32 )
 
 [node name="Sprite10" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 448, 64, 64 )
@@ -68,6 +69,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 [node name="Sprite3" type="Sprite" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 64, 0 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -97,6 +99,7 @@ light_mask = 1
 
 [node name="Sprite18" type="Sprite" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 128, 0 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -131,6 +134,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite26" type="Sprite" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 192, 0 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -162,6 +166,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite27" type="Sprite" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( 256, 0 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -193,6 +198,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite25" type="Sprite" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 384, 0 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -224,6 +230,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="DoorUp" type="Sprite" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( 448, 0 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
@@ -251,6 +258,7 @@ light_mask = 1
 
 [node name="DoorLeft" type="Sprite" parent="." index="7"]
 
+editor/display_folded = true
 position = Vector2( 512, 0 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]

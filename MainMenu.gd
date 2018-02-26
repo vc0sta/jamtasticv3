@@ -9,6 +9,7 @@ var sel_como_jogar = preload('res://menu/como_jogar_selected.png')
 var sel_novo_jogo = preload('res://menu/novo_jogo_selected.png')
 var sel_sair = preload('res://menu/sair_selected.png')
 
+onready var how_to_play = get_node('Sprite2')
 onready var effect = get_node("transitions")
 
 # member variables here, example:
@@ -33,22 +34,26 @@ func _ready():
     
         
 func _input(event):
-    if event.is_action("ui_up") && event.is_pressed() && !event.is_echo():
-        index = index - 1
-    if event.is_action("ui_down") && event.is_pressed() && !event.is_echo():
-        index = index + 1
+    if how_to_play.visible:
+        if event.is_pressed():
+            how_to_play.visible = false
+    else:
+        if event.is_action("ui_up") && event.is_pressed() && !event.is_echo():
+            index = index - 1
+        if event.is_action("ui_down") && event.is_pressed() && !event.is_echo():
+            index = index + 1
+            
+        index = abs(index%3)
         
-    index = abs(index%3)
-    
-    if last_index != index:
-        get_node('HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/' + menu_buttons[index]).texture = selected[index]
-        get_node('HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/' + menu_buttons[last_index]).texture = texture[last_index]
-        last_index = index
-        
-    if event.is_action("ui_accept") && event.is_pressed() && !event.is_echo():
-        if (index == 0):
-            print("Como jogar")
-        if (index == 1):
-            get_node("/root/global").start_game()
-        if(index == 2):
-            get_tree().quit()
+        if last_index != index:
+            get_node('HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/' + menu_buttons[index]).texture = selected[index]
+            get_node('HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/' + menu_buttons[last_index]).texture = texture[last_index]
+            last_index = index
+            
+        if event.is_action("ui_accept") && event.is_pressed() && !event.is_echo():
+            if (index == 0):
+                how_to_play.visible = true
+            if (index == 1):
+                get_node("/root/global").start_game()
+            if(index == 2):
+                get_tree().quit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://menu/MenuBG.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://menu/sair.png" type="Texture" id=6]
 [ext_resource path="res://menu/jamtastic.png" type="Texture" id=7]
 [ext_resource path="res://menu/ilustration.png" type="Texture" id=8]
+[ext_resource path="res://menu/comoJogar.png" type="Texture" id=9]
 
 [node name="MarginContainer" type="MarginContainer"]
 
@@ -234,5 +235,12 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+
+visible = false
+texture = ExtResource( 9 )
+centered = false
+_sections_unfolded = [ "Offset", "Visibility" ]
 
 

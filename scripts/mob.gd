@@ -153,16 +153,16 @@ func _on_alert_timer_timeout():
     warning_timer.stop()
     warning_timer.wait_time = 3
     warning_timer.start()
-    GUI.get_child(0).get_child(0).visible = false
-    GUI.get_child(0).get_child(1).visible = true
+    GUI.get_child(0).get_child(0).get_child(0).visible = false
+    GUI.get_child(0).get_child(0).get_child(1).visible = true
     alert = false
     alert_vel = 4
 
 
 func _on_vision_GUI_change():
     map.close()
-    GUI.get_child(0).get_child(1).visible = false
-    GUI.get_child(0).get_child(0).visible = true
+    GUI.get_child(0).get_child(0).get_child(1).visible = false
+    GUI.get_child(0).get_child(0).get_child(0).visible = true
 
 
 func _on_warning_timer_timeout():

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/sound_source.gd" type="Script" id=1]
-[ext_resource path="res://sounds/music_test.ogg" type="AudioStream" id=2]
+[ext_resource path="res://sounds/02-FicaLigeiro70bpm.wav" type="AudioStream" id=2]
 [ext_resource path="res://arte/map/house_tileset.png" type="Texture" id=3]
 [ext_resource path="res://arte/buttons/X.png" type="Texture" id=4]
 
@@ -9,6 +9,11 @@
 
 custom_solver_bias = 0.0
 radius = 40.0
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30, 20 )
 
 [node name="sound_source" type="Area2D"]
 
@@ -66,6 +71,22 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="6"]
+
+input_pickable = false
+collision_layer = 1015809
+collision_mask = 1015809
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( 0, 10 )
+shape = SubResource( 2 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

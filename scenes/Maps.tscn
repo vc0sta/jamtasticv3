@@ -44,12 +44,10 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 1 )]
 
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -512.0
-margin_top = 40.0
-margin_right = 512.0
-margin_bottom = 80.0
-_sections_unfolded = [ "Margin", "custom_constants" ]
+margin_left = 60.0
+margin_top = 60.0
+margin_right = -60.0
+margin_bottom = -60.0
+_sections_unfolded = [ "Anchor", "Focus", "Hint", "Margin", "Rect", "custom_constants" ]
 
 
